@@ -1,10 +1,18 @@
-const Note = require('../../models/note')
+const Note = require('../../models/note') 
 
-function newNote(req, res) {
+function index(req, res) {
+
+}
+
+function createNote(req, res) {
 
 }
 
 function editNote(req, res) {
+
+}
+
+function updateNote(req, res) {
 
 }
 
@@ -13,7 +21,9 @@ function deleteNote(req, res) {
 }
 
 module.exports = {
-    newNote,
+    index,
+    createNote,
     editNote,
+    updateNote,
     deleteNote
 }
