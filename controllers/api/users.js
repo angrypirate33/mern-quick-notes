@@ -41,8 +41,13 @@ function createJWT(user) {
     )
 }
 
+function checkToken(req, res) {
+    res.json(req.exp)
+}
+
 module.exports = {
     create,
     login,
-    createJWT
+    createJWT,
+    checkToken
 }
