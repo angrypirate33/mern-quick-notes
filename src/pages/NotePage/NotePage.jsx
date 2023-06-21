@@ -1,8 +1,8 @@
-import './NewOrderPage.css'
+import './NotePage.css'
 
 export default function NewOrderPage() {
   
     return (
-      <h1>NewOrderPage</h1>
+      <h1>NotePage</h1>
     )
   }
