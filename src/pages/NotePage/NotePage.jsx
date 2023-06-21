@@ -1,8 +1,12 @@
 import './NotePage.css'
+import NewNoteForm from '../../components/NewNoteForm/NewNoteForm'
 
-export default function NewOrderPage() {
+export default function NotePage() {
   
     return (
-      <h1>NotePage</h1>
+      <div>
+        <h1>NotePage</h1>
+        <NewNoteForm />
+      </div>
     )
   }
