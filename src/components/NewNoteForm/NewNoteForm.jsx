@@ -2,14 +2,15 @@ import { useState } from 'react'
 import { createNewNote } from '../../utilities/notes-api'
 import './NewNoteForm.css'
 
-export default function NewNoteForm() {
+export default function NewNoteForm({ setNotes }) {
 
     const [noteText, setNoteText] = useState('')
 
     const handleAddNote = () => {
         createNewNote({ text: noteText }) 
             .then(newNote => {
-                setNoteText('');
+                setNoteText('')
+                setNotes(prevNotes => [...prevNotes, newNote])
             })
             .catch(error => {
                 console.error(error);

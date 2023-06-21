@@ -16,7 +16,7 @@ export default function NotePage() {
   return (
     <div>
       <h1>NotePage</h1>
-      <NewNoteForm />
+      <NewNoteForm setNotes={setNotes} />
       <div className='note-list'>
         {notes.map(note => (
           <div key={note._id} className='note-item'>
