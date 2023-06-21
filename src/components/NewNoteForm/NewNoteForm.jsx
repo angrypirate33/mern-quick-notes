@@ -7,15 +7,12 @@ export default function NewNoteForm() {
     const [noteText, setNoteText] = useState('')
 
     const handleAddNote = () => {
-        createNewNote({ text: noteText }) // Call the createNewNote function
+        createNewNote({ text: noteText }) 
             .then(newNote => {
-                console.log('New note: ', newNote);
                 setNoteText('');
-                // Update your state or perform any necessary actions after successfully creating the note
             })
             .catch(error => {
                 console.error(error);
-                // Handle the error appropriately
             });
     };
 

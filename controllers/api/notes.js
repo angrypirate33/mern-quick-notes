@@ -1,7 +1,7 @@
 const Note = require('../../models/note') 
 
 function index(req, res, next) {
-    Note.find({ user: req.user._id })
+    Note.find()
         .then(notes => {
            res.json(notes) 
         })

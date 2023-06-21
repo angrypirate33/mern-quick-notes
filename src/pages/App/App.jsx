@@ -16,7 +16,7 @@ export default function App() {
         <>
           <Nav user={user} setUser={setUser} />
           <Routes>
-            <Route path='/' element={<NotePage />} />
+            <Route path='/' element={<NotePage user={user} />} />
           </Routes>
         </>
         : 
