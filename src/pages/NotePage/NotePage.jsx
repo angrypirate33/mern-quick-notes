@@ -2,16 +2,22 @@ import { useEffect, useState } from 'react'
 import NewNoteForm from '../../components/NewNoteForm/NewNoteForm'
 import './NotePage.css'
 
-export default function NotePage() {
-
+export default function NotePage({ user }) {
   const [notes, setNotes] = useState([])
 
   useEffect(() => {
-    fetch('/api/notes')
-      .then(response => response.json())
-      .then(data => setNotes(data))
-      .then(error => console.error(error))
-  }, [])
+    const fetchUserNotes = async () => {
+      try {
+        const response = await fetch(`/api/notes/?userId=${user._id}`);
+        const data = await response.json();
+        setNotes(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchUserNotes();
+  }, [user]);
   
   return (
     <div>

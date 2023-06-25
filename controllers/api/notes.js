@@ -1,7 +1,8 @@
 const Note = require('../../models/note') 
 
 function index(req, res, next) {
-    Note.find()
+    const userId = req.query.userId
+    Note.find({ user: userId })
         .then(notes => {
            res.json(notes) 
         })
