@@ -24,10 +24,11 @@ export default function NotePage({ user }) {
       <h1>NotePage</h1>
       <NewNoteForm setNotes={setNotes} />
       <div className='note-list'>
+        <h3>{`${user.name}'s Notes`}</h3>
         {notes.map(note => (
           <div key={note._id} className='note-item'>
-            <p>{note.text}</p>
-            <p>Created at: {new Date(note.createdAt).toLocaleDateString('en-US')}</p>
+            <p>{note.text} Created at: {new Date(note.createdAt).toLocaleDateString('en-US')}</p>
+            <hr />
           </div>
         ))}
       </div>
